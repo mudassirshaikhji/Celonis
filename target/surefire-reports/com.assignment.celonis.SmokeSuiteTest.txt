@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: com.assignment.celonis.SmokeSuiteTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 68.55 s <<< FAILURE! - in com.assignment.celonis.SmokeSuiteTest
+loginUsingInvalidCredentials  Time elapsed: 10.359 s  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+Failed to navigate to https://applications.eu-1.celonis.cloud/. This usually means that a call to the COM method IWebBrowser2::Navigate2() failed. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-8MCF731', ip: '192.168.0.29', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {browserAttachTimeout: 0, browserName: internet explorer, elementScrollBehavior: 0, enableElementCacheCleanup: true, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.enableFullPageScreenshot: true, ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ie.forceShellWindowsApi: false, ignoreProtectedModeSettings: true, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:34631/, javascriptEnabled: true, nativeEvents: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, requireWindowFocus: false, unexpectedAlertBehaviour: dismiss, unhandledPromptBehavior: dismiss, version: 11}
+Session ID: 2968a8ca-6a63-4d08-ba01-9b1e4f7410c9
+

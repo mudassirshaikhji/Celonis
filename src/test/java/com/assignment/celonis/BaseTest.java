@@ -20,6 +20,7 @@ import utils.Utilities;
 
 public class BaseTest {
 
+	//just a comment
 	 DriverManager driverManager;
 	 WebDriver driver;
 	 final String URL = Utilities.readProperties("url");

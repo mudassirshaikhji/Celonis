@@ -16,7 +16,7 @@ public class FirefoxDriverManger extends DriverManager {
 		
 	}
 
-	
+	//setup
 	private void setUp() {
 		 String firefoxDriverPath = new File("src/test/resources").getAbsolutePath()+ "\\" + "geckodriver.exe";
 		 System.setProperty("webdriver.gecko.driver", firefoxDriverPath);

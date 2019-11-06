@@ -19,10 +19,8 @@ import utils.Utilities;
 public class SmokeSuiteTest extends BaseTest {
 
 	
-	//update
 	@Test
 	@DisplayName("When trying to login with invalid credentials, show an appropriate error message")
-	//@Disabled
 	void loginUsingInvalidCredentials() {
 		// Initialize
 		final String expectedErrorMessage = "Email or password are incorrect.";
@@ -37,7 +35,6 @@ public class SmokeSuiteTest extends BaseTest {
 
 	@Test
 	@DisplayName("Log in successful with valid credentials")
-	//@Disabled
 	void successfulLogin() {
 		// Initialize
 		final String expectedToolTipText = "Mudassir Shaikhji";
@@ -52,7 +49,6 @@ public class SmokeSuiteTest extends BaseTest {
 
 	@Test
 	@DisplayName("Verifying that the forgot password page loads successfully")
-	//@Disabled
 	void checkIfForgotPasswordPageLoads() {
 		final String expectedToolTipText = "Forgot your password?";
 		final String screenshotName = "ForgotYourPassword";
@@ -64,7 +60,6 @@ public class SmokeSuiteTest extends BaseTest {
 	
 	@Test
 	@DisplayName("Verifying that the Order To Cash page successfully loads")
-	//@Disabled
 	public void checkIfOrderToCashPageLoads() {
 		final String expectedText = "Order-to-Cash Analysis";
 		final String screenshotName = "OrderToCash";
@@ -77,7 +72,6 @@ public class SmokeSuiteTest extends BaseTest {
 	
 	@Test
 	@DisplayName("Verifying that the Purchase To Pay page successfully loads")
-	//@Disabled
 	void checkIfPurchaseToPayPageLoads() {
 		final String expectedText = "Purchase-to-Pay Analysis";
 		final String screenshotName = "PurchaseToPay";
@@ -90,7 +84,6 @@ public class SmokeSuiteTest extends BaseTest {
 	
 	@Test
 	@DisplayName("Verifying if the Service now Ticketing page successfully loads")
-	//@Disabled
 	void checkIfServiceNowTicketingPageLoads() {
 		final String expectedText = "INCIDENT MANAGEMENT (TICKET STATUS)";
 		final String screenshotName = "ServiceNowTicketing";
@@ -101,10 +94,6 @@ public class SmokeSuiteTest extends BaseTest {
 		assertEquals(expectedText, actualText);
 	}
 	
-//	@ParameterizedTest
-//	@DisplayName("Verify that the user can successfully log out")
-//	@ValueSource(strings = {"Chorme", "IE", "Firefox"})
-//	@Disabled
 	@Test
 	void signOut() {
 		final String screenshotName = "signOut";

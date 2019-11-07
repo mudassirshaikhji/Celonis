@@ -58,6 +58,7 @@ public class CelonisCloudHomePage {
 		return new ServiceNowTicketingPage(driver);
 	}
 	
+	//adding a comment
 	public SignedOutPage signOut() {
 		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(avatar));
 		driver.findElement(avatar).click();

@@ -10,6 +10,9 @@ import utils.Utilities;
 public class CelonisCloudHomePage {
 
 	private By avatar = By.xpath("//div[@class='ce-avatar__bg']");
+	private By topSearch = By.xpath("//a[@class='ce-cloud-header-link ce-cloud-header-link--bordered']");
+	private By topActualSearchBar = By.cssSelector(".ce-global-search__input.ce-input-element");
+	private By noResultsFoundGlobalSearch = By.xpath("//h2[@class='ce-placeholder__title']");
 	private By orderTOCash = By.xpath("//div[contains(text(), 'Order to Cash - Process Overview (EUR) - EN')]");
 	private By orderToCashEntry = By.xpath("//a[@data-testing-uid='analysisListComponent-analysisName-Order to Cash - Process Overview (EUR) - EN-button']");
 	private By purchaseToPayEntry = By.xpath("//a[@data-testing-uid='analysisListComponent-analysisName-Purchase to Pay - Demo - EN (EUR)-button']");
@@ -58,7 +61,6 @@ public class CelonisCloudHomePage {
 		return new ServiceNowTicketingPage(driver);
 	}
 	
-	//adding a comment
 	public SignedOutPage signOut() {
 		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(avatar));
 		driver.findElement(avatar).click();
@@ -66,4 +68,17 @@ public class CelonisCloudHomePage {
 		driver.findElement(logOutOption).click();
 		return new SignedOutPage(driver);
 	}
+	
+	public String executeInvalidGlobalSearch(String searchText) {
+		final String noResultsFound = "No results found";
+		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(topSearch));
+		driver.findElement(topSearch).click();
+		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(topActualSearchBar));
+		driver.findElement(topActualSearchBar).click();
+		driver.findElement(topActualSearchBar).sendKeys(searchText);
+		new WebDriverWait(driver, timeout).until(ExpectedConditions.textToBePresentInElementLocated(noResultsFoundGlobalSearch, noResultsFound));
+		return driver.findElement(noResultsFoundGlobalSearch).getText();
+		
+	}
+	
 }

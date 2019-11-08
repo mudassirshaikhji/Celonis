@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -51,6 +52,10 @@ public class Utilities {
 		}
 		
 		return property.getProperty(propertyToRead);
+	}
+	
+	public static void waitUntilVisibilityOfElementLocated(WebDriver driver, By element, long timeout) {
+		
 	}
 	
 }

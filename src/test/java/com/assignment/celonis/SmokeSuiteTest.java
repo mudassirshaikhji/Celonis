@@ -7,13 +7,6 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import celonisPages.CelonisCloudHomePage;
-import celonisPages.ForgotPasswordPage;
-import celonisPages.OrderToCashPage;
-import celonisPages.PurchaseToPayPage;
-import celonisPages.ServiceNowTicketingPage;
-import celonisPages.SignInPage;
-import celonisPages.SignedOutPage;
 import utils.Utilities;
 
 public class SmokeSuiteTest extends BaseTest {
@@ -103,4 +96,17 @@ public class SmokeSuiteTest extends BaseTest {
 		Utilities.takeScreenShot(driver, screenshotName);
 		assertTrue(isTextVisible);		
 	}
+	
+	@Test
+	@DisplayName("Global search with input which does not return any result")
+	void executeInvalidSearchAtTheTop() {
+		final String screenshotName = "GlobalSearch";
+		final String expectedText = "No results found";
+		final String searchText = "This search will not return any result";
+		homePage = signIn.login(username, password);
+		String actualText = homePage.executeInvalidGlobalSearch(searchText);
+		Utilities.takeScreenShot(driver, screenshotName);
+		assertEquals(expectedText, actualText);		
+	}
 }
+

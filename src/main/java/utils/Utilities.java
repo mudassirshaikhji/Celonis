@@ -25,17 +25,20 @@ public class Utilities {
 	}
 	
 	public static void click(WebDriver driver, By element, long timeout) {
-		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(element));
+//		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(element));
+		waitUntilVisibilityOfElementLocated(driver,element, timeout);
 		driver.findElement(element).click();
 	}
 	
 	public static void sendKeys(WebDriver driver, WebElement element, long timeout, String keyToSend) {
-		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(element));
+//		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(element));
+		waitUntilVisibilityOfElementLocated(driver,(By) element, timeout);
 		element.sendKeys(keyToSend);
 	}
 	
 	public static void sendKeys(WebDriver driver, By element, long timeout, String keyToSend) {
-		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(element));
+//		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(element));
+		waitUntilVisibilityOfElementLocated(driver,element, timeout);
 		driver.findElement(element).sendKeys(keyToSend);
 	}
 	

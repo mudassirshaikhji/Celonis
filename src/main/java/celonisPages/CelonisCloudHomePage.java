@@ -9,7 +9,14 @@ import utils.Utilities;
 
 public class CelonisCloudHomePage {
 
-	private By avatar = By.xpath("//div[@class='ce-avatar__bg']");
+	//Log out locators
+	private By avatar = By.cssSelector(".ce-avatar__letter.text-uppercase");
+	private By logOutOption = By.xpath("//button[contains(text(),'Logout')]");
+	
+	
+	//sign In locators
+	private By avatarName = By.cssSelector("div.ce-avatar__bg");
+	
 	private By topSearch = By.cssSelector(".ce-cloud-header-link.ce-cloud-header-link--bordered");
 	private By topActualSearchBar = By.cssSelector(".ce-global-search__input.ce-input-element");
 	private By noResultsFoundGlobalSearch = By.xpath("//h2[@class='ce-placeholder__title']");
@@ -19,7 +26,7 @@ public class CelonisCloudHomePage {
 	private By purchaseToPayEntry = By.xpath("//a[@data-testing-uid='analysisListComponent-analysisName-Purchase to Pay - Demo - EN (EUR)-button']");
 	private By serviceNowTicketingEntry = By.xpath("//a[@data-testing-uid='analysisListComponent-analysisName-ServiceNow - Ticket Status-button']");
 	private By allWorkspaces = By.linkText("All Workspaces");
-	private By logOutOption = By.cssSelector("button[data-testing-uid='userMenu-logout-button']");
+	
 	private WebDriver driver;
 	
 	private long timeout = 15;
@@ -31,8 +38,8 @@ public class CelonisCloudHomePage {
 	
 	public String returnAvatarName() {
 //		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(avatar));
-		Utilities.waitUntilVisibilityOfElementLocated(driver, avatar, timeout);
-		return driver.findElement(avatar).getAttribute("title");
+		Utilities.waitUntilVisibilityOfElementLocated(driver, avatarName, timeout);
+		return driver.findElement(avatarName).getAttribute("title");
 	}
 	
 	public OrderToCashPage navigateToOrderToCashPage() {
@@ -59,7 +66,9 @@ public class CelonisCloudHomePage {
 	}
 	
 	public SignedOutPage signOut() {
-		Utilities.click(driver, avatar, timeout);
+//		Utilities.click(driver, avatar, timeout);
+		Utilities.waitUntilVisibilityOfElementLocated(driver, avatarName, timeout);
+		Utilities.click(driver, avatarName, timeout);
 		Utilities.click(driver, logOutOption, timeout);
 		return new SignedOutPage(driver);
 	}

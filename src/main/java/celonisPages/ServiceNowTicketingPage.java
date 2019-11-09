@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utils.Utilities;
+
 public class ServiceNowTicketingPage {
 	
 	private WebDriver driver;
@@ -16,7 +18,9 @@ public class ServiceNowTicketingPage {
 	}
 
 	public String returnServiceNowTicketingText() {
-		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(driver.findElement(serviceNowTicketing)));
-		return driver.findElement(serviceNowTicketing).getText();
+//		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(driver.findElement(serviceNowTicketing)));
+		Utilities.waitUntilVisibilityOfElementLocated(driver, serviceNowTicketing, timeout);
+//		return driver.findElement(serviceNowTicketing).getText();
+		return Utilities.getTextFromAWebElement(driver, serviceNowTicketing, timeout);
 	}
 }

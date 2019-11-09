@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utils.Utilities;
+
 public class OrderToCashPage {
 
 	private long timeout = 10;
@@ -16,8 +18,10 @@ public class OrderToCashPage {
 	}
 	
 	public String returnOrderToCashAnalysisText() {
-		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(driver.findElement(orderToCashAnalysisText)));
-		return driver.findElement(orderToCashAnalysisText).getText();
+//		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(driver.findElement(orderToCashAnalysisText)));
+		Utilities.waitUntilVisibilityOfElementLocated(driver, orderToCashAnalysisText, timeout);
+//		return driver.findElement(orderToCashAnalysisText).getText();
+		return Utilities.getTextFromAWebElement(driver, orderToCashAnalysisText, timeout);
 	}
 	
 }

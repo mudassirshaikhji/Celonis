@@ -24,9 +24,19 @@ public class Utilities {
 		element.click();
 	}
 	
+	public static void click(WebDriver driver, By element, long timeout) {
+		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(element));
+		driver.findElement(element).click();
+	}
+	
 	public static void sendKeys(WebDriver driver, WebElement element, long timeout, String keyToSend) {
 		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(element));
 		element.sendKeys(keyToSend);
+	}
+	
+	public static void sendKeys(WebDriver driver, By element, long timeout, String keyToSend) {
+		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(element));
+		driver.findElement(element).sendKeys(keyToSend);
 	}
 	
 	public static void takeScreenShot(WebDriver driver, String screenShotName) {
@@ -55,7 +65,15 @@ public class Utilities {
 	}
 	
 	public static void waitUntilVisibilityOfElementLocated(WebDriver driver, By element, long timeout) {
-		
+		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(element));
 	}
 	
+	public static String getTextFromAWebElement(WebDriver driver, By element, long timeout) {
+		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(element));
+		return driver.findElement(element).getText();
+	}
+
+	public static void waitUntilPresenceOfElementLocated(WebDriver driver, By element, long timeout) {
+		new WebDriverWait(driver, timeout).until(ExpectedConditions.presenceOfElementLocated(element));		
+	}
 }

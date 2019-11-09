@@ -35,8 +35,10 @@ public class SignInPage {
 	}
 	
 	public String getErrorMessageInvalidLogin() {
-		new WebDriverWait(driver, timeout).until(ExpectedConditions.presenceOfElementLocated(invalidUserOrPassword));
-		return driver.findElement(invalidUserOrPassword).getText();
+//		new WebDriverWait(driver, timeout).until(ExpectedConditions.presenceOfElementLocated(invalidUserOrPassword));
+		Utilities.waitUntilPresenceOfElementLocated(driver, invalidUserOrPassword, timeout);
+//		return driver.findElement(invalidUserOrPassword).getText();
+		return Utilities.getTextFromAWebElement(driver, invalidUserOrPassword, timeout);
 	}
 	
 	public ForgotPasswordPage goTOForgotPasswordPage() {

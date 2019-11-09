@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utils.Utilities;
+
 public class PurchaseToPayPage {
 
 	private long timeout = 10;
@@ -16,8 +18,10 @@ public class PurchaseToPayPage {
 	}
 	
 	public String returnPurchaseToPayText() {
-		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(driver.findElement(purchaseToPayText)));
-		return driver.findElement(purchaseToPayText).getText();
+//		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(driver.findElement(purchaseToPayText)));
+		Utilities.waitUntilVisibilityOfElementLocated(driver, purchaseToPayText, timeout);
+//		return driver.findElement(purchaseToPayText).getText();
+		return Utilities.getTextFromAWebElement(driver, purchaseToPayText, timeout);
 	}
 	
 }

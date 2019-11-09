@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utils.Utilities;
+
 public class SignedOutPage {
 
 	private WebDriver driver;
@@ -17,7 +19,8 @@ public class SignedOutPage {
 	}
 	
 	public boolean isSignInToYourTeamTextVisible() {
-		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(driver.findElement(verificationSignInToYourTeamText)));
+//		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(driver.findElement(verificationSignInToYourTeamText)));
+		Utilities.waitUntilVisibilityOfElementLocated(driver, verificationSignInToYourTeamText, timeout);
 		if(driver.findElement(verificationSignInToYourTeamText).isDisplayed())
 				return true;
 		else

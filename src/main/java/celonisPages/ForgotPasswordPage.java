@@ -21,12 +21,14 @@ public class ForgotPasswordPage {
 	}
 	
 	public SignInPage signIn() {
-		Utilities.click(driver, driver.findElement(signIn), timeout);
+		Utilities.click(driver, signIn, timeout);
 		return new SignInPage(driver);
 	}
 	
 	public String pageLoadedString() {
-		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(forgotYourPasswordText));
-		return driver.findElement(forgotYourPasswordText).getText();
+//		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(forgotYourPasswordText));
+		Utilities.waitUntilVisibilityOfElementLocated(driver, forgotYourPasswordText, timeout);
+//		return driver.findElement(forgotYourPasswordText).getText();
+		return Utilities.getTextFromAWebElement(driver, forgotYourPasswordText, timeout);
 	}
 }

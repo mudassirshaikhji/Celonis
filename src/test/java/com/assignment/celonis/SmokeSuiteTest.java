@@ -14,7 +14,7 @@ public class SmokeSuiteTest extends BaseTest {
 	
 	@Test
 	@DisplayName("When trying to login with invalid credentials, show an appropriate error message")
-	@Disabled
+//	@Disabled
 	void loginUsingInvalidCredentials() {
 		// Initialize
 		final String expectedErrorMessage = "Email or password are incorrect.";
@@ -29,7 +29,7 @@ public class SmokeSuiteTest extends BaseTest {
 
 	@Test
 	@DisplayName("Log in successful with valid credentials")
-	@Disabled
+//	@Disabled
 	void successfulLogin() {
 		// Initialize
 		final String expectedToolTipText = "Mudassir Shaikhji";
@@ -44,7 +44,7 @@ public class SmokeSuiteTest extends BaseTest {
 
 	@Test
 	@DisplayName("Verifying that the forgot password page loads successfully")
-	@Disabled
+//	@Disabled
 	void checkIfForgotPasswordPageLoads() {
 		final String expectedToolTipText = "Forgot your password?";
 		final String screenshotName = "ForgotYourPassword";
@@ -56,7 +56,7 @@ public class SmokeSuiteTest extends BaseTest {
 	
 	@Test
 	@DisplayName("Verifying that the Order To Cash page successfully loads")
-	@Disabled
+//	@Disabled
 	public void checkIfOrderToCashPageLoads() {
 		final String expectedText = "Order-to-Cash Analysis";
 		final String screenshotName = "OrderToCash";
@@ -69,7 +69,7 @@ public class SmokeSuiteTest extends BaseTest {
 	
 	@Test
 	@DisplayName("Verifying that the Purchase To Pay page successfully loads")
-	@Disabled
+//	@Disabled
 	void checkIfPurchaseToPayPageLoads() {
 		final String expectedText = "Purchase-to-Pay Analysis";
 		final String screenshotName = "PurchaseToPay";
@@ -82,7 +82,7 @@ public class SmokeSuiteTest extends BaseTest {
 	
 	@Test
 	@DisplayName("Verifying if the Service now Ticketing page successfully loads")
-	@Disabled
+//	@Disabled
 	void checkIfServiceNowTicketingPageLoads() {
 		final String expectedText = "INCIDENT MANAGEMENT (TICKET STATUS)";
 		final String screenshotName = "ServiceNowTicketing";
@@ -95,7 +95,7 @@ public class SmokeSuiteTest extends BaseTest {
 	
 	@Test
 	@DisplayName("User is able to sign out")
-	@Disabled
+//	@Disabled
 	void signOut() {
 		final String screenshotName = "signOut";
 		homePage = signIn.login(username, password);
@@ -107,7 +107,7 @@ public class SmokeSuiteTest extends BaseTest {
 	
 	@Test
 	@DisplayName("Global search with input which does not return any result")
-	@Disabled
+//	@Disabled
 	void executeInvalidGlobalSearch() {
 		final String screenshotName = "InvalidGlobalSearch";
 		final String expectedText = "No results found";
@@ -121,7 +121,7 @@ public class SmokeSuiteTest extends BaseTest {
 	
 	@Test
 	@DisplayName("Global search with valid input which returns some result")
-	@Disabled
+//	@Disabled
 	void executeValidGlobalSearch() {
 		final String screenshotName = "ValidGlobalSearch";
 		final String searchText = "ServiceNow Ticketing";

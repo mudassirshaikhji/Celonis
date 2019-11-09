@@ -12,7 +12,7 @@ public class SignedOutPage {
 
 	private WebDriver driver;
 	private final long timeout = 5;
-	private By verificationSignInToYourTeamText = By.className("ce-login-layout__title");
+	private By verificationSignInToYourTeamText = By.xpath("//h1[contains(text(), 'Sign in to your team')]");
 	
 	public SignedOutPage(WebDriver driver) {
 		this.driver = driver;

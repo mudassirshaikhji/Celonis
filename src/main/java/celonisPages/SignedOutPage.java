@@ -11,7 +11,7 @@ import utils.Utilities;
 public class SignedOutPage {
 
 	private WebDriver driver;
-	private final long timeout = 5;
+	private final long timeout = 15;
 	private By verificationSignInToYourTeamText = By.xpath("//h1[contains(text(), 'Sign in to your team')]");
 	
 	public SignedOutPage(WebDriver driver) {
@@ -19,7 +19,6 @@ public class SignedOutPage {
 	}
 	
 	public boolean isSignInToYourTeamTextVisible() {
-//		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(driver.findElement(verificationSignInToYourTeamText)));
 		Utilities.waitUntilVisibilityOfElementLocated(driver, verificationSignInToYourTeamText, timeout);
 		if(driver.findElement(verificationSignInToYourTeamText).isDisplayed())
 				return true;
